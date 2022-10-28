@@ -46,10 +46,12 @@ def play(player1, player2, num_games, verbose=False):
 
 
 def quincy(prev_play, counter=[0]):
-
+  
     counter[0] += 1
+    # She plays this sequence
     choices = ["R", "R", "P", "P", "S"]
-    return choices[counter[0] % len(choices)]
+    play = choices[counter[0] % len(choices)]
+    return play
 
 
 def mrugesh(prev_opponent_play, opponent_history=[]):
@@ -61,7 +63,8 @@ def mrugesh(prev_opponent_play, opponent_history=[]):
         most_frequent = "S"
 
     ideal_response = {'P': 'S', 'R': 'P', 'S': 'R'}
-    return ideal_response[most_frequent]
+    play = ideal_response[most_frequent]
+    return play
 
 
 def kris(prev_opponent_play):
